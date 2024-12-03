@@ -8,7 +8,7 @@ const InputError = require('../exceptions/InputError');
 (async () => {
     const server = Hapi.server({
         port: 8080,
-        host: '0.0.0.0',
+        host: 'localhost',
         routes: {
             cors: {
               origin: ['*'],
@@ -29,7 +29,7 @@ const InputError = require('../exceptions/InputError');
                 status: 'fail',
                 message: `${response.message} Silakan gunakan foto lain.`
             })
-            newResponse.code(response.statusCode)
+            newResponse.code(response.output.statusCode)
             return newResponse;
         }
  
@@ -38,7 +38,7 @@ const InputError = require('../exceptions/InputError');
                 status: 'fail',
                 message: response.message
             })
-            newResponse.code(response.statusCode)
+            newResponse.code(response.output.statusCode)
             return newResponse;
         }
  
