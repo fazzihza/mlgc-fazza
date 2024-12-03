@@ -9,7 +9,7 @@ const routes = [
             payload: {
                 maxBytes: 1000000, // Maksimal ukuran file 1MB
                 parse: true,
-                output: 'file', // Mengambil file dari request
+                output: 'multipart/form-data', // Mengambil file dari request
             },
         },
         handler: predictHandler,
