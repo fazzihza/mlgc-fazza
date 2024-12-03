@@ -8,8 +8,8 @@ const routes = [
         options: {
             payload: {
                 maxBytes: 1000000, // Maksimal ukuran file 1MB
-                parse: true,
-                output: 'multipart/form-data', // Mengambil file dari request
+                allow: 'multipart/form-data',
+                multipart: true // Mengambil file dari request
             },
         },
         handler: predictHandler,
